@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lo que nadie te dijo antes de gerenciar tu primer proyecto digital · Vilma Fajardo</title>
+<meta name="description" content="Ebook práctico para nuevos gerentes de proyectos digitales: 7 capítulos con ejercicios, base PMBOK 8 y la IA como aliada. USD 17.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0c142b;--cyan:#30c4d6;--violet:#6851da;--cloud:#ecf0f1;--neon:#9de753;--ink:#1c2440;--muted:#5a6378;--line:#d5dbe0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:Sora,sans-serif;color:var(--navy);line-height:1.15;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.narrow{max-width:760px;margin:0 auto}
+.kicker{display:inline-block;font-family:Sora;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet);margin-bottom:14px}
+.kicker.l{color:var(--neon)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--neon);color:var(--navy);font-family:Sora;font-weight:800;font-size:17px;padding:17px 30px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 24px rgba(157,231,83,.25)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(157,231,83,.35)}
+.btn.sm{font-size:14px;padding:10px 18px;box-shadow:none}
+.trust{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:#aebbcc;margin-top:18px}
+.trust span:before{content:"✓ ";color:var(--neon)}
+section{padding:96px 0}
+.digital .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.digital .dg div{background:var(--cloud);border-radius:14px;padding:24px;border-top:5px solid var(--cyan);position:relative}
+.digital .dg div:nth-child(even){border-color:var(--violet)}
+.digital .dg div.hl{background:var(--navy);border-color:var(--neon)}.digital .dg div.hl h3{color:#fff}.digital .dg div.hl p{color:#cfd8e3}
+.digital .dg b{font-family:Sora;font-weight:800;font-size:22px;color:var(--cyan);display:block;margin-bottom:8px}
+.digital .dg div.hl b{color:var(--neon)}
+.digital .dg h3{font-size:18px;margin-bottom:6px}.digital .dg p{color:var(--muted);font-size:15px}
+.digital h2,.live h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:18px}
+.live{background:var(--navy);color:#cfd8e3}.live h2{color:#fff}
+.lv{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.lv p{margin-bottom:14px;font-size:17px}
+.lv ul{list-style:none}.lv li{padding:16px 0;border-top:1px solid #26304d}
+.lv li b{display:block;font-family:Sora;color:var(--neon);font-size:17px}
+@media(max-width:860px){.digital .dg,.lv{grid-template-columns:1fr}}
+/* top */
+.topbar{background:var(--violet);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:9px 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(12,20,43,.96);backdrop-filter:blur(6px);border-bottom:1px solid #1d2747}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:Sora;font-weight:800;color:#fff;font-size:16px;display:flex;align-items:center;gap:10px}
+.logo i{display:inline-block;width:14px;height:14px;background:var(--violet)}.logo i+i{background:var(--cyan);margin-left:-15px}
+.logo b{color:var(--cyan)}
+/* hero */
+.hero{background:var(--navy);color:#dfe6ee;padding:72px 0 0;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(38px,5.2vw,62px);font-weight:800;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--cyan)}
+.hero h1 u{text-decoration:none;background:linear-gradient(transparent 64%,rgba(157,231,83,.55) 64%,rgba(157,231,83,.55) 92%,transparent 92%)}
+.hero p.sub{font-size:19px;color:#c4cfdc;max-width:560px;margin-bottom:30px}
+.hero p.sub b{color:#fff}
+.stack{position:relative;height:520px}
+.stack img{position:absolute;width:62%;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.stack .a{left:0;top:70px;transform:rotate(-6deg);opacity:.85}
+.stack .b{right:0;top:60px;transform:rotate(5deg);opacity:.85}
+.stack .c{left:19%;top:0;z-index:2}
+.stats{margin-top:56px;border-top:1px solid #1d2747;display:grid;grid-template-columns:repeat(4,1fr)}
+.stats div{padding:26px 10px;text-align:center;border-right:1px solid #1d2747}
+.stats div:last-child{border:0}
+.stats b{display:block;font-family:Sora;font-size:34px;color:var(--neon);font-weight:800;line-height:1.1}
+.stats span{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#8fa0b8}
+/* pain */
+.pain h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:34px}
+.scenes{display:grid;gap:14px}
+.scene{border:1px solid var(--line);border-left:5px solid var(--cyan);border-radius:10px;padding:18px 22px;font-size:17px}
+.scene b{font-family:Sora;color:var(--navy)}
+.scene:nth-child(even){border-left-color:var(--violet)}
+.seen{margin-top:34px;background:var(--navy);color:#cfd8e3;border-radius:14px;padding:28px 30px;border-left:6px solid var(--neon)}
+.seen span{display:block;font-family:Sora;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.seen p{font-size:18px}
+.seen b{color:#fff}
+.reframe{margin-top:34px;font-family:Sora;font-weight:800;font-size:clamp(24px,2.8vw,32px);color:var(--navy)}
+.reframe span{background:linear-gradient(transparent 60%,rgba(157,231,83,.6) 60%)}
+/* solution */
+.sol{background:var(--cloud)}
+.center{text-align:center}
+.sol h2,.inside h2,.author h2,.offer h2,.faq h2,.for h2,.bumps h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:18px}
+.lead{font-size:19px;color:var(--muted);max-width:720px;margin:0 auto}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.feat div{background:#fff;border-radius:14px;padding:26px 26px 24px;border-top:5px solid var(--cyan)}
+.feat div:nth-child(2){border-color:var(--violet)}.feat div:nth-child(3){border-color:var(--violet)}.feat div:nth-child(4){border-color:var(--neon)}
+.feat h3{font-size:20px;margin-bottom:8px}
+.feat p{color:var(--muted);font-size:16px}
+/* inside */
+.chap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:44px 0;border-bottom:1px solid var(--line)}
+.chap:last-child{border:0}
+.chap:nth-child(even) .txt{order:2}
+.chap .n{font-family:Sora;font-weight:800;font-size:64px;color:var(--cyan);line-height:1}
+.chap h3{font-size:28px;margin:8px 0 12px}
+.chap p{color:var(--muted)}
+.chap ul{list-style:none;margin-top:14px}
+.chap li{padding-left:24px;position:relative;margin-bottom:6px}
+.chap li:before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;background:var(--neon)}
+.chap .img{background:var(--navy);border-radius:16px;padding:34px;display:flex;justify-content:center}
+.chap .img img{width:78%;border-radius:4px;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.each{margin-top:56px;background:var(--navy);border-radius:18px;padding:40px;color:#cfd8e3}
+.each h3{color:#fff;font-size:24px;margin-bottom:22px}
+.each .g{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.each .g div{background:#16203d;border-radius:10px;padding:16px;font-size:15px}
+.each .g b{display:block;font-family:Sora;color:var(--neon);margin-bottom:4px}
+/* author */
+.author{background:var(--cloud)}
+.author .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.author .card{background:var(--navy);border-radius:18px;padding:40px;color:#fff;position:relative;overflow:hidden}
+.author .card:after{content:"";position:absolute;right:-70px;top:-70px;width:160px;height:160px;border:3px solid var(--cyan);border-radius:50%}
+.author .card b{font-family:Sora;font-size:30px;display:block;line-height:1.1}
+.author .card span{color:var(--cyan);font-size:15px}
+.creds{list-style:none;margin-top:26px}
+.creds li{padding:12px 0;border-top:1px solid #26304d;font-size:15px;color:#cfd8e3}
+.creds li b{font-family:Sora;font-size:15px;color:var(--neon);display:inline;margin-right:6px}
+.author p{margin-bottom:16px}
+.author blockquote{font-family:Sora;font-weight:700;font-size:22px;color:var(--navy);border-left:5px solid var(--neon);padding-left:18px;margin:24px 0}
+/* for */
+.for .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
+.for .box{border-radius:14px;padding:30px}
+.for .yes{background:var(--navy);color:#dfe6ee}.for .yes h3{color:var(--neon)}
+.for .no{background:var(--cloud)}
+.for h3{font-size:21px;margin-bottom:14px}
+.for ul{list-style:none}.for li{padding:9px 0 9px 28px;position:relative;border-top:1px solid rgba(128,128,128,.2)}
+.for .yes li:before{content:"✓";position:absolute;left:0;color:var(--neon);font-weight:700}
+.for .no li:before{content:"—";position:absolute;left:0;color:var(--violet);font-weight:700}
+/* bumps */
+.bumps .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
+.bump{border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:150px 1fr}
+.bump .im{background:var(--navy);padding:18px;display:flex;align-items:center}
+.bump .im img{border-radius:3px}
+.bump .tx{padding:22px}
+.bump .tag{display:inline-block;background:var(--violet);color:#fff;font-family:Sora;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:10px}
+.bump h3{font-size:19px;margin-bottom:8px}
+.bump p{font-size:15px;color:var(--muted)}
+.bump .pr{font-family:Sora;font-weight:800;color:var(--navy);margin-top:10px}
+/* offer */
+.offer{background:var(--navy)}
+.offer h2{color:#fff}
+.ofc{max-width:560px;margin:34px auto 0;background:#fff;border-radius:20px;overflow:hidden}
+.ofc .hd{background:var(--violet);color:#fff;font-family:Sora;font-weight:700;text-align:center;padding:16px;font-size:15px;letter-spacing:.06em}
+.ofc ul{list-style:none;padding:28px 32px 6px}
+.ofc li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--cloud);font-size:16px}
+.ofc li:before{content:"✓";position:absolute;left:4px;color:var(--violet);font-weight:800}
+.ofc .price{text-align:center;padding:22px 32px 32px}
+.ofc .price b{display:block;font-family:Sora;font-weight:800;font-size:58px;color:var(--navy);line-height:1}
+.ofc .price span{color:var(--muted);font-size:14px;display:block;margin:6px 0 22px}
+.ofc .btn{width:100%;justify-content:center}
+.ofc small{display:block;margin-top:14px;color:var(--muted);font-size:13px}
+/* faq */
+.faq details{border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px}
+.faq summary{font-family:Sora;font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary:after{content:"+";color:var(--violet);font-size:22px;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq details p{margin-top:12px;color:var(--muted)}
+/* final */
+.final{background:var(--cloud);text-align:center}
+.final h2{font-size:clamp(28px,3.4vw,40px);max-width:760px;margin:0 auto 26px}
+footer{background:var(--navy);color:#8fa0b8;font-size:13px;padding:34px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:860px){
+  section{padding:68px 0}
+  .hero .grid,.chap,.author .grid,.for .grid,.bumps .grid,.feat{grid-template-columns:1fr}
+  .stack{height:380px}
+  .stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(2){border-right:0}
+  .chap:nth-child(even) .txt{order:0}
+  .each .g{grid-template-columns:1fr 1fr}
+  .bump{grid-template-columns:110px 1fr}
+  header .btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- CONFIGURACIÓN: cambia estos enlaces cuando estén listos -->
+<script>
+const CONFIG={
+  modo:"venta",                           // "preventa" o "venta"
+  hotmart:"#",                               // enlace de pago de Hotmart (modo venta)
+  listaEspera:"https://wa.me/573153621273?text=Hola%20Vilma%2C%20quiero%20que%20me%20avises%20cuando%20abra%20la%20venta%20del%20ebook%20%C2%ABLo%20que%20nadie%20te%20dijo%20antes%20de%20gerenciar%20tu%20primer%20proyecto%20digital%C2%BB."                            // enlace de la lista de interesados (modo preventa)
+};
+</script>
+
+<div class="topbar" id="topbar">Ebook + 10 plantillas en Excel · USD 17 · Acceso inmediato</div>
+<header><div class="wrap">
+  <div class="logo"><i></i><i></i>Vilma Fajardo <b>· Proyectos</b></div>
+  <a class="btn sm cta" href="#oferta">Quiero el ebook</a>
+</div></header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="kicker l">Para nuevos gerentes de proyectos digitales</span>
+        <h1>Te nombraron gerente. <em>Nadie te dijo cómo.</em> <u>Esta guía sí.</u></h1>
+        <p class="sub"><b>Lo que nadie te dijo antes de gerenciar tu primer proyecto digital</b>: 7 capítulos con ejemplos, ejercicios y un plan para tus primeros 30 días. Con el PMBOK como base y la IA como aliada, sin entregarle tu criterio.</p>
+        <a class="btn cta" href="#oferta">Quiero el ebook por USD 17 →</a>
+        <div class="trust"><span>Acceso inmediato</span><span>Pago seguro vía Hotmart</span><span>PDF descargable</span></div>
+      </div>
+      <div class="stack">
+        <img class="a" src="assets/e9.webp" alt="Página interior: paso a paso del capítulo 1">
+        <img class="b" src="assets/e35.webp" alt="Página interior: los 10 errores del gerente principiante">
+        <img class="c" src="assets/e1.webp" alt="Portada del ebook">
+      </div>
+    </div>
+    <div class="stats">
+      <div><b>7</b><span>Capítulos</span></div>
+      <div><b>7</b><span>Ejercicios aplicados</span></div>
+      <div><b>30</b><span>Días de plan de acción</span></div>
+      <div><b>10</b><span>Plantillas en Excel</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pain">
+  <div class="wrap narrow">
+    <span class="kicker">¿Te suena?</span>
+    <h2>Así se ven las primeras semanas como gerente</h2>
+    <div class="scenes">
+      <div class="scene"><b>"Es un cambio pequeño"</b>, dice el cliente. Ya van once, y la fecha de entrega sigue siendo la misma.</div>
+      <div class="scene"><b>Te ascendieron por tu excelente trabajo técnico</b>, y sigues haciendo lo técnico. Mientras tanto, nadie está mirando el proyecto completo.</div>
+      <div class="scene"><b>La fecha se prometió en la reunión comercial</b>, antes de que alguien estimara el trabajo.</div>
+      <div class="scene"><b>El problema apareció hace dos semanas</b>, y todavía estás buscando cómo contárselo al patrocinador.</div>
+      <div class="scene"><b>La IA te dio un cronograma impecable</b>, con actividades que no aplican a tu proyecto.</div>
+    </div>
+    <div class="seen">
+      <span>Lo que vi en mis años corporativos</span>
+      <p>Una y otra vez, las empresas ascendían a su mejor técnico a gerente, sin guía y sin preparación. El resultado casi siempre era el mismo: <b>perdían un buen técnico y ganaban un mal administrador.</b> No por falta de talento, sino porque nadie le enseñó el nuevo oficio.</p>
+    </div>
+    <p class="reframe"><span>No te falta capacidad. Te falta estructura.</span></p>
+  </div>
+</section>
+
+<section class="sol">
+  <div class="wrap center">
+    <span class="kicker">La solución</span>
+    <h2>Lo que hubiera querido saber cuando empecé</h2>
+    <p class="lead">Una guía práctica que convierte el estándar de la gestión de proyectos en decisiones concretas para tu primer proyecto digital. Sin jerga, sin teoría de relleno.</p>
+    <div class="feat" style="text-align:left">
+      <div><h3>Para quien empieza</h3><p>No necesitas certificación. Necesitas un proyecto real y la decisión de trabajar con método.</p></div>
+      <div><h3>Base PMBOK 8ª edición</h3><p>Los principios y dominios del estándar vigente, traducidos a lo que haces el lunes en la mañana.</p></div>
+      <div><h3>IA con criterio</h3><p>Dónde te ahorra horas la IA, dónde no, y cómo validar lo que te entrega antes de firmarlo con tu nombre.</p></div>
+      <div><h3>Para aplicar, no solo leer</h3><p>Ejercicios para tu proyecto real, 10 plantillas en Excel listas para editar y un plan de acción de 30 días.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="digital">
+  <div class="wrap">
+    <div class="center"><span class="kicker">El terreno</span><h2>Un proyecto digital no se gestiona como una obra</h2><p class="lead">Sitios web, aplicaciones, tiendas en línea, plataformas, integraciones y lanzamientos tienen cinco rasgos que cambian las reglas. La guía está construida alrededor de ellos.</p></div>
+    <div class="dg">
+      <div><b>01</b><h3>Los requisitos cambian mientras se construye</h3><p>El cliente descubre lo que quiere cuando ve las primeras pantallas.</p></div>
+      <div><b>02</b><h3>El cliente cree que cambiar es fácil</h3><p>El trabajo digital no se ve: "mover un botón" parece un minuto.</p></div>
+      <div><b>03</b><h3>Dependes de terceros</h3><p>Pasarelas de pago, plataformas e integraciones que pueden fallar sin aviso.</p></div>
+      <div><b>04</b><h3>Hay más de una forma de planear</h3><p>Predictivo, ágil o híbrido: elegir mal el enfoque cuesta caro.</p></div>
+      <div><b>05</b><h3>Equipos técnicos y remotos</h3><p>Desarrollo, diseño, pruebas y proveedores externos, cada uno en su lugar.</p></div>
+      <div class="hl"><b>+</b><h3>La IA ya es parte del trabajo</h3><p>Acelera lo operativo. Lo que firmas sigue siendo tu responsabilidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="inside">
+  <div class="wrap">
+    <div class="center"><span class="kicker">Por dentro</span><h2>Mira lo que vas a encontrar</h2><p class="lead">Los capítulos siguen la secuencia natural de un proyecto: asumir el rol, definir, alinear personas, planear, liderar, controlar y apoyarte en la IA.</p></div>
+    <div class="chap">
+      <div class="txt"><div class="n">01–02</div><h3>Asumir el rol y proteger el alcance</h3><p>Qué cambia cuando pasas de coordinar a gerenciar, y cómo evitar que el proyecto crezca sin control.</p>
+        <ul><li>Tus primeras dos semanas en un proyecto nuevo o heredado</li><li>Diagnóstico en semáforo</li><li>Formato de solicitud de cambio</li></ul></div>
+      <div class="img"><img src="assets/e13.webp" alt="Página del capítulo 2: cómo definir un alcance" loading="lazy"></div>
+    </div>
+    <div class="chap">
+      <div class="txt"><div class="n">03–04</div><h3>Interesados y planeación realista</h3><p>Cómo gestionar expectativas, dar malas noticias sin perder credibilidad y estimar sin optimismo.</p>
+        <ul><li>Matriz de poder e interés</li><li>Predictivo, ágil o híbrido: cuándo usar cada uno</li><li>Estimación de tres puntos</li></ul></div>
+      <div class="img"><img src="assets/e21.webp" alt="Página del capítulo 4: cómo armar un plan realista" loading="lazy"></div>
+    </div>
+    <div class="chap">
+      <div class="txt"><div class="n">05–07</div><h3>Equipo, riesgos e IA</h3><p>Cómo delegar con alcance claro, anticipar riesgos y usar la IA como copiloto sin entregarle el mando.</p>
+        <ul><li>Matriz RACI y delegación en cinco elementos</li><li>Registro de riesgos y protocolo de crisis</li><li>Método Pide · Revisa · Decide</li></ul></div>
+      <div class="img"><img src="assets/e24.webp" alt="Página del capítulo 5: matriz RACI" loading="lazy"></div>
+    </div>
+    <div class="each">
+      <h3>Cada capítulo incluye</h3>
+      <div class="g">
+        <div><b>El desafío</b>La situación real que vas a enfrentar.</div>
+        <div><b>Error típico</b>Lo que casi todos hacemos al empezar.</div>
+        <div><b>Paso a paso</b>Qué hacer y en qué orden.</div>
+        <div><b>IA y criterio</b>Qué delegar a la IA y qué decides tú.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author">
+  <div class="wrap grid">
+    <div class="card">
+      <span>Quién escribió esta guía</span>
+      <b>Vilma Fajardo</b>
+      <ul class="creds">
+        <li><b>Ingeniera</b>y cofundadora de Salamandra Digital</li>
+        <li><b>PMP</b>certificación obtenida durante su carrera corporativa</li>
+        <li><b>IA</b>Certificación en Inteligencia Artificial, Convierte Más (2026)</li>
+        <li><b>Hoy</b>gerente de proyectos independiente para negocios digitales, creadores de contenido y emprendimientos propios</li>
+      </ul>
+    </div>
+    <div>
+      <span class="kicker">Mi historia</span>
+      <h2>Me nombraron gerente sin capacitación</h2>
+      <p>Había coordinado muy bien un equipo de desarrollo de software, y eso bastó para que me dieran un proyecto en marcha, con un cliente activo y un alcance mal dimensionado. No controlé el alcance. El cliente pidió todos los cambios que quiso y yo los acepté.</p>
+      <p>Ese proyecto me hizo pensar que no era buena para esto. Con el tiempo entendí que no me faltaba capacidad: me faltaba estructura. Estudié, me equivoqué, aprendí de mis errores y de los de otros gerentes, y ese camino me llevó a grandes logros en grandes empresas.</p>
+      <blockquote>Esta guía reúne lo que hubiera querido saber al principio.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="live">
+  <div class="wrap">
+    <div class="lv">
+      <div>
+        <span class="kicker l">Prueba en vivo</span>
+        <h2>Este ebook lo lancé como un proyecto digital</h2>
+        <p>Con acta de constitución, alcance escrito, exclusiones, cronograma planeado hacia atrás desde la apertura, registro de riesgos y control de cambios. Las mismas herramientas que vas a recibir.</p>
+        <p>Incluso las plantillas en Excel que acompañan este ebook nacieron como una solicitud de cambio: se evaluó su impacto, se aprobó y se registró. Así se trabaja con estructura.</p>
+      </div>
+      <ul>
+        <li><b>Acta</b>Objetivo medible, alcance y criterios de éxito aprobados</li>
+        <li><b>Cronograma</b>Hitos planeados hacia atrás desde la fecha de apertura</li>
+        <li><b>Riesgos</b>Identificados con dueño y respuesta antes de empezar</li>
+        <li><b>Cambios</b>Cada ajuste evaluado y aprobado por escrito</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="for">
+  <div class="wrap">
+    <div class="center"><span class="kicker">¿Es para ti?</span><h2>Para quién es esta guía</h2></div>
+    <div class="grid">
+      <div class="box yes"><h3>Es para ti si…</h3><ul>
+        <li>Te ascendieron o te asignaron tu primer proyecto digital.</li>
+        <li>Estudiaste gestión de proyectos y ahora toca aplicarla.</li>
+        <li>Sientes que corres todo el día y el proyecto no avanza.</li>
+        <li>Quieres usar la IA sin perder el control de lo que entregas.</li>
+      </ul></div>
+      <div class="box no"><h3>No es para ti si…</h3><ul>
+        <li>Ya gestionas proyectos complejos con método y buscas plantillas avanzadas.</li>
+        <li>Buscas una preparación para el examen de certificación.</li>
+        <li>Quieres leer sin aplicar: la guía funciona con un proyecto real.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="bumps">
+  <div class="wrap">
+    <div class="center"><span class="kicker">Opcional en el pago</span><h2>Llévalo a un nicho concreto</h2><p class="lead">Al pagar puedes agregar uno o los dos kits complementarios, cada uno con una guía corta y seis plantillas editables en Excel.</p></div>
+    <div class="grid">
+      <div class="bump"><div class="im"><img src="assets/k1.webp" alt="Portada del kit para infoproductores" loading="lazy"></div><div class="tx"><span class="tag">Kit 1</span><h3>Vuélvete Gerente de Proyectos de Infoproductores</h3><p>Gestiona lanzamientos de cursos y membresías: cronograma con fechas automáticas, RACI, riesgos, checklist de apertura, métricas y propuesta de servicio.</p><div class="pr">+ USD 7</div></div></div>
+      <div class="bump"><div class="im"><img src="assets/k2.webp" alt="Portada del kit Detrás de cámaras" loading="lazy"></div><div class="tx"><span class="tag">Kit 2</span><h3>Detrás de cámaras</h3><p>Gestiona los proyectos de un creador de contenido: mapa de frentes, calendario multiplataforma, producción, marcas, programa de alto valor y CRM.</p><div class="pr">+ USD 7</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="wrap center">
+    <span class="kicker l">La oferta</span>
+    <h2>Todo lo que te llevas hoy</h2>
+    <div class="ofc">
+      <div class="hd">LO QUE NADIE TE DIJO ANTES DE GERENCIAR TU PRIMER PROYECTO DIGITAL</div>
+      <ul style="text-align:left">
+        <li>Ebook de 39 páginas en PDF, listo para descargar</li>
+        <li>10 plantillas editables en Excel con las herramientas del ebook</li>
+        <li>7 capítulos con ejemplos y errores típicos</li>
+        <li>7 ejercicios para aplicar a tu proyecto real</li>
+        <li>Los 10 errores del gerente principiante</li>
+        <li>Plan de acción para tus primeros 30 días</li>
+        <li>Acceso inmediato tras la confirmación del pago</li>
+      </ul>
+      <div class="price"><b>USD 17</b><span>Pago único</span>
+        <a class="btn cta" href="#">Quiero el ebook ahora →</a>
+        <small id="ofnote">Pago seguro procesado por Hotmart.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap narrow">
+    <div class="center"><span class="kicker">Dudas frecuentes</span><h2>Preguntas y respuestas</h2></div>
+    <details><summary>¿En qué formato viene el ebook?</summary><p>Es un PDF de 39 páginas, acompañado de un archivo de Excel con 10 plantillas editables: diagnóstico, alcance, solicitudes de cambio, interesados, comunicación, estimación, RACI, delegación, riesgos y plan de 30 días. Funciona en Excel y en Google Sheets.</p></details>
+    <details><summary>¿Necesito ser PMP o tener experiencia previa?</summary><p>No. La guía está escrita para quien empieza. Usa el PMBOK como base, pero lo explica sin jerga y lo aterriza en situaciones reales.</p></details>
+    <details><summary>¿Sirve si mi proyecto no es digital?</summary><p>Está pensado para proyectos digitales: sitios web, aplicaciones, tiendas en línea, plataformas, integraciones y lanzamientos en línea. Si tu proyecto es de otro tipo, los principios te sirven, pero los ejemplos y las herramientas están hechos para lo digital.</p></details>
+    <details><summary>¿Qué edición del PMBOK usa?</summary><p>La octava edición, publicada por el Project Management Institute en noviembre de 2025. La guía es independiente y no está afiliada a PMI.</p></details>
+    <details><summary>¿La IA hace el trabajo por mí?</summary><p>No, y la guía te explica por qué. Te muestra dónde la IA te ahorra horas y cómo validar lo que produce antes de usarlo.</p></details>
+    <details><summary>¿Cómo recibo el ebook?</summary><p>Al confirmarse el pago, Hotmart te envía un correo con el acceso para descargar el PDF y, si los agregaste, los kits.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Tus errores van a ser nuevos, no los mismos que todos cometemos al empezar.</h2>
+    <a class="btn cta" href="#oferta">Quiero el ebook por USD 17 →</a>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span>© 2026 Vilma Fajardo · Salamandra Digital</span>
+  <span>PMI y PMBOK son marcas registradas de Project Management Institute, Inc. Esta guía es independiente.</span>
+</div></footer>
+
+<script>
+(function(){
+  const pre=CONFIG.modo==="preventa";
+  document.querySelectorAll('.cta').forEach(a=>{
+    if(pre){a.href=CONFIG.listaEspera;a.innerHTML=a.classList.contains('sm')?'Avísame':'Avísame cuando abra →';}
+    else if(a.getAttribute('href')==='#'||a.closest('.ofc')){a.href=(CONFIG.hotmart&&CONFIG.hotmart!=='#')?CONFIG.hotmart:CONFIG.listaEspera;}
+  });
+  if(pre){
+    document.getElementById('topbar').textContent='Apertura: lunes 14 de diciembre · USD 17 · Únete a la lista para enterarte primero';
+    document.getElementById('ofnote').textContent='La venta abre el lunes 14 de diciembre. Únete a la lista y te avisamos.';
+  }
+})();
+</script>
+</body></html>
